@@ -37,6 +37,8 @@ function CameraCard(props) {
   };
   runPosenet();
   const drawResult = (pose, video, videoWidth, videoHeight, canvas) => {
+    if (!canvas.current) return
+
     const ctx = canvas.current.getContext("2d");
     canvas.current.width = videoWidth;
     canvas.current.height = videoHeight;
